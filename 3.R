@@ -1,0 +1,10 @@
+data(warpbreaks)
+attach(warpbreaks)
+summary(warpbreaks)
+lm1 <-lm(breaks ~ wool+tension,warpbreaks)
+with(warpbreaks,interaction.plot(wool,tension,breaks,legend=F))
+with(warpbreaks,interaction.plot(tension,wool,breaks,legend=F))
+coef(lm1)
+anova(lm1)
+
+paste ("Conclusions: We can see that both factors are significant.")

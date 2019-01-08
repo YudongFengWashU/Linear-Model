@@ -1,0 +1,7 @@
+library(MPV)
+data(table.b3)
+attach(table.b3)
+y.lm <- lm(y ~ x1 + x11)
+summary(y.lm)
+y.lm2 <- lm(y ~ x1 + x11 + x1:x11)
+summary(y.lm2)

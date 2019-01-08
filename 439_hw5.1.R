@@ -1,0 +1,12 @@
+library(MPV)
+data(table.b1)
+attach(table.b1)
+y.lm <- lm(y ~ x8+x2, data = table.b1)
+summary(y.lm)
+y.res = resid(y.lm)
+qqnorm(y.res)
+qqline(y.res)
+
+plot(fitted(y.lm),y.res,xlab = "Fitted",ylab = "Residuals")
+abline(h=0)
+plot(x2,y.res)

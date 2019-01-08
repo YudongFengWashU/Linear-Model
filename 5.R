@@ -1,0 +1,10 @@
+data("ToothGrowth")
+lm0 <- lm(len ~ dose, data = ToothGrowth)
+summary(lm0)
+lm1<-lm(len ~ dose*supp, data=ToothGrowth)
+summary(lm1)
+X <- model.matrix(lm1)[,-1]
+vif(X)
+plot(len ~ dose, pch=as.character(supp), data= ToothGrowth)
+abline(11.550, 7.811)
+abline(11.550 - 8.255, 7.811+3.904, lty=2)

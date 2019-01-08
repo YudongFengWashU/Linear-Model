@@ -1,0 +1,6 @@
+library(faraway)
+data("cars")
+attach(cars)
+lm1 <- lm(dist~speed,data=cars)
+summary(lm1)
+anova(lm1)

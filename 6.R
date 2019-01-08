@@ -1,0 +1,6 @@
+library(faraway)
+data("salmonella")
+attach(salmonella)
+lm1 <- lm(colonies~log(dose+1),salmonella)
+summary(lm1)
+anova(lm1)

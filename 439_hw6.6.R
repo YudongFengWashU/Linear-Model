@@ -1,0 +1,8 @@
+library(faraway)
+library(MASS)
+data(ozone)
+attach(ozone)
+model1 <- lm(O3 ~ temp + humidity + ibh, data = ozone)
+summary(model1)
+boxcox(model1,plotit = TRUE)
+boxcox(model1,plotit = TRUE,lambda = seq(0,0.5,by=0.01))
